@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 belongs_to :user
 
 def recent_commenters
-    self.comments.recent(5).collect{|comment| comment.user.login}.map{|commenter| "<li>#{commenter}</li>"}.join("")
+    self.comments.recent(5).includes(:user).collect{|comment| comment.user.login}.map{|commenter| "<li>#{commenter}</li>"}.join("")
  end
 
 end

@@ -4,5 +4,6 @@ has_many :posts
 
 acts_as_authentic
 
+delegate :city, :country, :to => :address
 end
 

@@ -1,6 +1,9 @@
 class Post < ActiveRecord::Base
  has_many :comments
 belongs_to :user
+  has_many :comments, :counter_cache => true # it requires to add comments_count in post model
+  belongs_to :user
+  validates_presence_of :title, :text
 
 
 def to_params

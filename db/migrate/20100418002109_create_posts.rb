@@ -8,8 +8,7 @@ class CreatePosts < ActiveRecord::Migration
       t.timestamps
     end
 
-    #sample post
-    User.first.posts.create(:title => "Hello World", :text => "My first blog post.")
+ 
   end
 
   def self.down

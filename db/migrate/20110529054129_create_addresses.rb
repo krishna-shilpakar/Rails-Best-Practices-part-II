@@ -8,12 +8,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.timestamps
     end
 
-    # sample users with addresses
 
-    user = User.first
-    user.create_address(:country=>"USA",:city => "NY")
-    user = User.last
-    user.create_address(:country=>"Canada",:city => "AB")
   end
 
   def self.down
